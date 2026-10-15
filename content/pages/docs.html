@@ -1,0 +1,281 @@
+<!-- wp:paragraph {"className":"sr-lead"} -->
+<p class="sr-lead">How to install Scoped Search &amp; Replace, choose the right scope, and replace text safely. Can't find your answer? Write to [sr_support_email].</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"sr-toc","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-toc"><!-- wp:paragraph -->
+<p>On this page</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li><a href="#install">Installing</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#scope">Choosing the scope</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#search">Search and count</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#replace">Find and replace</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#serialized">Custom fields and serialized data</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#page-builders">Page builders</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#limits">What the plugin does not change</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#backups">Backups and undo</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#security">Who can use it</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#uninstall">Multisite and uninstalling</a></li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading" id="install">1. Installing</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li><a href="/download/">Download the plugin ZIP</a>.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>In your dashboard, go to <strong>Plugins › Add New Plugin › Upload Plugin</strong>, choose the ZIP and click <strong>Install Now</strong>.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Click <strong>Activate Plugin</strong>.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Open <strong>Search &amp; Replace</strong> in the left-hand admin menu, or click <strong>Open tool</strong> under the plugin's name on the Plugins screen.</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Requirements: WordPress 5.8 or later and PHP 7.4 or later. The plugin has no settings page; everything happens on its one screen.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading" id="scope">2. Choosing the scope</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Both cards, Search and Count and Find and Replace, have the same box called <strong>Search Location and Content Scope</strong>. Its five choices decide which rows can be found and changed.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table -->
+<figure class="wp-block-table"><table><thead><tr><th>Choice</th><th>What it means</th></tr></thead><tbody><tr><td>Database Table</td><td><code>wp_posts</code> (your table prefix may differ) for the text of posts and pages, or <code>wp_postmeta</code> for custom fields.</td></tr><tr><td>Database Field</td><td>For posts: Post/Page Content, Post/Page Title or Post/Page Excerpt. For post meta: Custom Field / Meta Value.</td></tr><tr><td>Content Type</td><td>All Content Types, or one public type such as Post, Page or a type added by a plugin (for example Product).</td></tr><tr><td>Post Status</td><td>All statuses, Published, Draft, Pending review, Private or Scheduled.</td></tr><tr><td>Specific Page or Post</td><td>All pages/posts matching the selected filters, or one item. The list hides items that do not fit the type and status you chose.</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:paragraph {"className":"sr-note"} -->
+<p class="sr-note"><strong>The tool starts on Post and Published.</strong> To work on pages, products or drafts, change the content type and status first. This is the most common reason for "no matches".</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>"All Content Types" removes the type filter completely, and "All statuses" removes the status filter. With both, every row of the table is in scope, including revisions, navigation menu items and reusable blocks. Use them when you really mean the whole site.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading" id="search">3. Search and count</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Choose the scope, type a URL or any text in <strong>URL or Text to Search</strong> and click <strong>Search and Count</strong>. A search never changes anything. You get:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Matching Database Rows</strong>: how many records contain the text.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Total Occurrences</strong>: how many times it appears in all of them together.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>A table with the record ID, page/post ID, title, type, status, meta key (for custom fields), the number of occurrences, and <strong>Edit</strong> and <strong>View</strong> links that open in a new tab.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Matching is exact and case-sensitive: <code>Example.com</code> and <code>example.com</code> are different, and so are <code>http://</code> and <code>https://</code>. The count you see is exactly what a replacement with the same text and scope would change.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading" id="replace">4. Find and replace</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li>In <strong>Find and Replace</strong>, set the same scope you used for the search.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Enter <strong>Old URL or Text</strong> and <strong>New URL or Text</strong>. Both are required, and they must be different.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Click <strong>Replace Selected Records</strong>. A confirmation shows the old value, new value, table, field and scope. Click OK only if all of it is right.</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>The plugin finds the matching records in the scope, reads each one again just before changing it, replaces every occurrence in it and saves it. Afterwards you see "Replacement completed. Updated <em>n</em> database row(s) and replaced <em>n</em> occurrence(s)." and a new search for the old value in the same scope, which normally finds nothing left.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Because the new value cannot be empty, the plugin cannot delete a piece of text entirely. Replace it with the text you want instead, or edit those few pages by hand using the Edit links from a search.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading" id="serialized">5. Custom fields and serialized data</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Themes, page builders and plugins often save several settings in one custom field as a <em>serialized</em> value, a PHP format that records the length of every piece of text:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:code -->
+<pre class="wp-block-code"><code>a:1:{s:3:"url";s:22:"http://old.example.com";}</code></pre>
+<!-- /wp:code -->
+
+<!-- wp:paragraph -->
+<p>If the text changes but the <code>22</code> does not, PHP can no longer read the value and the setting is lost. Scoped Search &amp; Replace unserializes the value, replaces the text in every string inside it (also in nested arrays and objects), and serializes it again, so the lengths are correct.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>A value whose serialized data is <strong>already damaged</strong> cannot be read safely. It is skipped, left exactly as it was, and its ID is listed under "Failed or skipped record IDs".</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Objects of a class that is not loaded (for example from a deactivated plugin) are left unchanged.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading" id="page-builders">6. Page builders</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Most builders keep their layouts in custom fields. Choose <strong>wp_postmeta</strong> and <strong>Custom Field / Meta Value</strong>. The meta key column in the results shows which field matched.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Slashes written as <code>\/</code>.</strong> Some builders, Elementor among them, save layouts as JSON in which a URL looks like <code>https:\/\/old.example.com\/shop\/</code>. A search for <code>https://old.example.com</code> then finds nothing in post meta. Search for the part without slashes, such as <code>old.example.com</code>, and check the results before replacing.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Generated CSS.</strong> Some builders also write CSS files. After a replacement, regenerate them from the builder's own settings (in Elementor: Tools › Regenerate CSS &amp; Data).</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Caches.</strong> If a page still shows the old text, clear your caching plugin's or host's page cache.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading" id="limits">7. What the plugin does not change</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The plugin only works on the posts table (content, title, excerpt) and the post meta table (meta value). It never searches or changes:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>the options table: the site address under Settings › General, classic widgets, Customizer and theme settings, plugin settings;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>users and user meta, comments, categories, tags and other terms;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>custom tables created by other plugins (for example form entries or SEO data);</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>files: images, theme files and builder CSS files.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>When you move to a new domain, change the site address yourself under Settings › General (or with your host), then use the plugin for the content. <a href="/change-wordpress-domain-in-the-database/">Full guide</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading" id="backups">8. Backups and undo</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Replacements are written straight to the database. The plugin keeps no copy of the old values, so there is no undo button. Always take a full database backup before replacing, with your host's backup tool or a backup plugin.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To reverse a replacement, run it again the other way round in the same scope: the new value as Old, the old value as New. This works when the new value did not already exist in those records before; otherwise restore your backup.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading" id="security">9. Who can use it</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Only users with the <code>manage_options</code> capability see the menu and can run searches or replacements. By default that means administrators.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Every form is protected with a nonce, and the table, field, content type and status are checked against a fixed list before any query runs.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>The result of the last action is kept for 5 minutes for the user who ran it, then deleted. After a search or replacement the page reloads as a normal page, so refreshing the browser never repeats a replacement.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading" id="troubleshooting">10. Troubleshooting</h2>
+<!-- /wp:heading -->
+
+<!-- wp:table -->
+<figure class="wp-block-table"><table><thead><tr><th>You see</th><th>What to do</th></tr></thead><tbody><tr><td>No matching records were found in the selected location.</td><td>Check the content type and status (the tool starts on Post and Published), the field, and capitals. For builder data, search without slashes (see <a href="#page-builders">Page builders</a>).</td></tr><tr><td>The old value was not found. Nothing was replaced.</td><td>The text does not appear in the scope of the replace card. Run a search with the same scope first.</td></tr><tr><td>Failed or skipped record IDs: …</td><td>Those records were not changed: their serialized data was already damaged, or the database refused the update. Open them with the IDs shown and edit by hand if needed.</td></tr><tr><td>Enter both the old URL/text and the new URL/text.</td><td>Both fields are required. The new value cannot be empty.</td></tr><tr><td>The old and new values cannot be identical.</td><td>Check for a typo; they must differ.</td></tr><tr><td>Invalid … selection / The selected page or post does not exist.</td><td>The form was out of date, for example the page was deleted in another tab. Reload the tool and choose again.</td></tr><tr><td>The page still shows the old text.</td><td>Clear the page cache; for builders, regenerate their CSS. If the text comes from a widget or theme setting, it is in the options table, which the plugin does not change.</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading" id="uninstall">11. Multisite and uninstalling</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>On a multisite network the tool works on the site whose dashboard you are in; each site is searched and changed separately.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To remove the plugin, deactivate and delete it on the Plugins screen. It deletes its own short-lived result data on every site. Your content, including all replacements you made, stays as it is.</p>
+<!-- /wp:paragraph -->

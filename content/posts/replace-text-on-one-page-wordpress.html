@@ -1,0 +1,79 @@
+<!-- wp:paragraph -->
+<p>Your phone number changed, but only the Contact page should show the new one for now. Or a price on one landing page, a typo in a link on one product, a name that has to change in drafts but not in published posts yet. Most search and replace tools only offer "everywhere". Here is how to make a change in exactly one place.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">For a handful of changes: the editor</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>If the text appears two or three times on one page, open the page in the editor and change it there. In the block editor, the Code editor (Options menu › Code editor) shows the whole page as text, so you can use the browser's find (Ctrl+F) to spot every occurrence.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>That stops working when the text is hidden in a page builder layout or a custom field, appears many times, or is spread over several pages of one type.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">With Scoped Search &amp; Replace</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The plugin lets you set the scope before you search or replace. To change the phone number only on the Contact page:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li>Take a backup, then open <strong>Search &amp; Replace</strong> in the admin menu.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>In <strong>Search and Count</strong>, choose the table <em>wp_posts</em>, field <em>Post/Page Content</em>, content type <em>Page</em> and status <em>Published</em>.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Under <strong>Specific Page or Post</strong>, pick <em>Contact</em>. The list only offers pages that fit the type and status you chose.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Search for the old number exactly as it is written, for example <code>020 7946 0000</code>. You see how many times it appears on that page.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>In <strong>Find and Replace</strong>, set the same scope, enter the old and the new number, and confirm. Only the Contact page changes.</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:image {"sizeSlug":"full","className":"sr-shot"} -->
+<figure class="wp-block-image size-full sr-shot"><img src="/wp-content/themes/scoped-sr/assets/images/plugin-scope-one-page.webp" alt="The scope box in Scoped Search and Replace with one page, Wholesale, chosen under Specific Page or Post"/><figcaption class="wp-element-caption">One page chosen as the scope: nothing outside it can change.</figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Other useful scopes</h2>
+<!-- /wp:heading -->
+
+<!-- wp:table -->
+<figure class="wp-block-table"><table><thead><tr><th>You want to change…</th><th>Choose</th></tr></thead><tbody><tr><td>Only drafts, not what is live</td><td>Status: Draft</td></tr><tr><td>Only products, not blog posts</td><td>Content type: Product (or the type your shop plugin uses)</td></tr><tr><td>Only the titles of posts</td><td>Field: Post/Page Title</td></tr><tr><td>Only the short summaries</td><td>Field: Post/Page Excerpt</td></tr><tr><td>A button link in a page builder on one page</td><td>Table: wp_postmeta, field: Custom Field / Meta Value, plus that page</td></tr><tr><td>Scheduled posts before they go live</td><td>Status: Scheduled</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Tips for exact matches</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Capitals count.</strong> The search is case-sensitive, so "Call Us" and "call us" are different texts.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>The database holds HTML.</strong> Text that looks like <code>Fish &amp; Chips</code> on the page may be stored as <code>Fish &amp;amp; Chips</code>. If a search finds nothing, try a shorter part of the text without special characters.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Spaces and line breaks</strong> must match too. Searching for a shorter, distinctive piece (just the number, not "Phone: …") is more reliable.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Check the result.</strong> Use the View link in the results to open the page, and clear your page cache if the old text still shows.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->

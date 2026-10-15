@@ -1,0 +1,215 @@
+<!-- wp:group {"align":"full","className":"sr-page-hero","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull sr-page-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">How it works</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">One real change, from start to finish</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"sr-lead"} -->
+<p class="sr-lead">A small coffee shop moved its site from <code>http://harbour-coffee.example</code> to <code>https://www.harbour-coffee.example</code>. Its published pages still link to the old address. Here is how they fixed it, with screenshots taken from the plugin itself.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sr-section sr-section--canvas sr-section--line","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull sr-section sr-section--canvas sr-section--line"><!-- wp:columns {"align":"wide","className":"sr-split"} -->
+<div class="wp-block-columns alignwide sr-split"><!-- wp:column {"width":"40%"} -->
+<div class="wp-block-column" style="flex-basis:40%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Step 1</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Take a backup, then open the tool</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>After activating the plugin, <strong>Search &amp; Replace</strong> appears in the left-hand admin menu (and as "Open tool" on the Plugins screen). The page has two cards: Search and Count, and Find and Replace.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The yellow notice at the top is the plugin's own reminder: back up the site before replacing anything, and search first.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","className":"sr-shot"} -->
+<figure class="wp-block-image size-full sr-shot"><img src="/wp-content/themes/scoped-sr/assets/images/plugin-search.webp" alt="The Search and Count card with its scope box and the search field"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sr-section","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull sr-section"><!-- wp:columns {"align":"wide","className":"sr-split sr-split--flip"} -->
+<div class="wp-block-columns alignwide sr-split sr-split--flip"><!-- wp:column {"width":"40%"} -->
+<div class="wp-block-column" style="flex-basis:40%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Step 2</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Choose the scope</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The links are in the text of the pages, so the shop picked:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"className":"sr-check"} -->
+<ul class="wp-block-list sr-check"><!-- wp:list-item -->
+<li><strong>Table:</strong> wp_posts, <strong>field:</strong> Post/Page Content</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Content type:</strong> Page</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Status:</strong> Published, so the draft Christmas gift guide stays as it is for now</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Specific page:</strong> all matching pages (pick one from the list to limit it further)</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","className":"sr-shot"} -->
+<figure class="wp-block-image size-full sr-shot"><img src="/wp-content/themes/scoped-sr/assets/images/plugin-scope-one-page.webp" alt="The scope box with Page and Published chosen, and the list of single pages open on Wholesale"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:columns {"align":"wide","className":"sr-split"} -->
+<div class="wp-block-columns alignwide sr-split"><!-- wp:column {"width":"40%"} -->
+<div class="wp-block-column" style="flex-basis:40%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Step 3</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Search and count</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>They searched for <code>http://harbour-coffee.example</code>. Result: <strong>5 matching rows, 12 occurrences</strong>, on five pages. Each row has Edit and View links, so they opened Brew guides (4 matches) to check what would change.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Nothing has been changed yet. Searching is always safe.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","className":"sr-shot"} -->
+<figure class="wp-block-image size-full sr-shot"><img src="/wp-content/themes/scoped-sr/assets/images/plugin-results.webp" alt="Search completed: 5 matching database rows and 12 total occurrences, listed by page with Edit and View links"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:columns {"align":"wide","className":"sr-split sr-split--flip"} -->
+<div class="wp-block-columns alignwide sr-split sr-split--flip"><!-- wp:column {"width":"40%"} -->
+<div class="wp-block-column" style="flex-basis:40%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Step 4</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Replace in the same scope</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In Find and Replace they set the same scope, entered the old and the new address, and clicked <strong>Replace Selected Records</strong>. Before anything is saved, the browser asks:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-formula"} -->
+<p class="sr-formula">Please review the replacement:<br><br>Old value:<br>http://harbour-coffee.example<br><br>New value:<br>https://www.harbour-coffee.example<br><br>Table: wp_posts<br>Field: Post/Page Content<br>Scope: All pages/posts matching the selected filters<br><br><strong>Create a backup before continuing. Do you want to proceed?</strong></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","className":"sr-shot"} -->
+<figure class="wp-block-image size-full sr-shot"><img src="/wp-content/themes/scoped-sr/assets/images/plugin-replace.webp" alt="The Find and Replace card with the old and new URL filled in"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:columns {"align":"wide","className":"sr-split"} -->
+<div class="wp-block-columns alignwide sr-split"><!-- wp:column {"width":"40%"} -->
+<div class="wp-block-column" style="flex-basis:40%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Step 5</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Check the result</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>"Replacement completed. Updated 5 database row(s) and replaced 12 occurrence(s)." The plugin then searched the scope again: nothing left.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Next, they ran the same steps with the <strong>post meta</strong> table, where two button links and a serialized layout setting still held the old address.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","className":"sr-shot"} -->
+<figure class="wp-block-image size-full sr-shot"><img src="/wp-content/themes/scoped-sr/assets/images/plugin-done.webp" alt="Replacement completed, 5 rows updated and 12 occurrences replaced; 0 remaining matches"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sr-section sr-section--canvas","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull sr-section sr-section--canvas"><!-- wp:group {"className":"sr-section-head","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-section-head"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Tips</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Getting the scope right</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:columns {"align":"wide","className":"sr-cards"} -->
+<div class="wp-block-columns alignwide sr-cards"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"className":"sr-card","layout":{"type":"default"}} -->
+<div class="wp-block-group sr-card"><!-- wp:heading {"level":3,"className":"sr-ic sr-ic--search"} -->
+<h3 class="wp-block-heading sr-ic sr-ic--search">No matches?</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The tool starts on Post and Published. For pages, products or drafts, change the content type or status. Also check capitals: the search is case-sensitive.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"className":"sr-card","layout":{"type":"default"}} -->
+<div class="wp-block-group sr-card"><!-- wp:heading {"level":3,"className":"sr-ic sr-ic--layers"} -->
+<h3 class="wp-block-heading sr-ic sr-ic--layers">Content, then custom fields</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A URL often lives in both places. Run the content of the posts table first, then post meta, and search both again at the end.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"className":"sr-card","layout":{"type":"default"}} -->
+<div class="wp-block-group sr-card"><!-- wp:heading {"level":3,"className":"sr-ic sr-ic--scope"} -->
+<h3 class="wp-block-heading sr-ic sr-ic--scope">Try it small</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Not sure about a change? Run it on one page first, check that page in the browser, then widen the scope to all pages.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sr-cta-wrap","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull sr-cta-wrap"><!-- wp:pattern {"slug":"scoped-sr/cta-band"} /--></div>
+<!-- /wp:group -->

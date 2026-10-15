@@ -1,0 +1,85 @@
+<!-- wp:paragraph -->
+<p>Your host installed an SSL certificate and the site opens with <code>https://</code>. Yet some pages show no padlock, or the browser warns that parts of the page are "not secure". The cause is almost always old <code>http://</code> addresses saved inside your content. Here is how to find and fix them.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">What mixed content is</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A page loaded over https that pulls in an image, script or stylesheet over plain http has <em>mixed content</em>. Browsers block or flag those parts, and the page loses its padlock. Ordinary links to <code>http://</code> pages do not cause the warning, but they send visitors through an extra redirect, so it is worth fixing them too.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To see which addresses a page loads over http, open it, press F12 to open the browser's developer tools and look at the Console: each mixed-content item is listed with its address.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Step 1: back up and change the site address</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Take a full database backup. Then under <strong>Settings › General</strong>, change <em>WordPress Address</em> and <em>Site Address</em> from <code>http://</code> to <code>https://</code> and save. This makes WordPress itself build https addresses from now on, but it does not change the addresses already saved in your posts.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Step 2: count the old addresses</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In <a href="/how-it-works/">Scoped Search &amp; Replace</a>, choose the posts table, field <em>Post/Page Content</em>, <em>All Content Types</em> and <em>All statuses</em>, and search for your own address with http, for example:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:code -->
+<pre class="wp-block-code"><code>http://www.example.com</code></pre>
+<!-- /wp:code -->
+
+<!-- wp:paragraph -->
+<p>Search exactly as the address is written. If your site was used both with and without <code>www.</code>, search for both forms. Then repeat the search with the post meta table, where page builders and themes keep their links and background images.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Step 3: replace</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In Find and Replace, set the same scope and replace <code>http://www.example.com</code> with <code>https://www.example.com</code>. Check the confirmation (old value, new value, table, field, scope) and click OK. Then do the same in post meta.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-note"} -->
+<p class="sr-note"><strong>Replace your own domain only.</strong> Don't replace every <code>http://</code> with <code>https://</code>: links to other websites that don't support https would break. Always include your domain in the old value.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Step 4: what is left</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>If the browser still warns after the replacement:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Clear caches</strong>: your caching plugin, your host's cache and, for builders, regenerate their CSS files.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Builder data with escaped slashes</strong>: some builders save URLs as <code>http:\/\/www.example.com</code>. Search post meta for <code>http:\/\/www.example.com</code> and replace it with <code>https:\/\/www.example.com</code>.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Widgets, Customizer and theme settings</strong> live in the options table, which the plugin doesn't change. Fix them in Appearance › Widgets and Appearance › Customize.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Theme or plugin files</strong> with a hard-coded http address: ask the developer for an update.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Images from other sites</strong> that only work over http: download them and add them to your own media library.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Finally, make sure every http address of your site redirects to https. Most hosts have a switch for this; otherwise ask them to add the redirect.</p>
+<!-- /wp:paragraph -->

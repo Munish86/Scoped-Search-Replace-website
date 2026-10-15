@@ -1,0 +1,131 @@
+<!-- wp:paragraph -->
+<p>You moved your WordPress site to a new domain, or renamed the business, and the site opens at the new address. But click around and many links still point at the old one: menus, buttons, images inside posts. That is because WordPress stores full addresses inside your content, not just in its settings. Here is where the old domain hides, and how to replace it without breaking anything.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Before you start: a backup</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Every step below changes your database. Take a full backup first, with your host's backup tool or a backup plugin, and make sure you know how to restore it. If you have a staging copy of the site, do the whole job there first.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Step 1: change the site address</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>WordPress keeps its own address in two settings under <strong>Settings › General</strong>: <em>WordPress Address (URL)</em> and <em>Site Address (URL)</em>. Change both to the new domain and save. You will be logged out and have to log in again at the new address.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you can't reach the dashboard any more, your host can change these values for you, or you can set them in <code>wp-config.php</code> with the <code>WP_HOME</code> and <code>WP_SITEURL</code> constants.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Step 2: find where the old domain still is</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The old address usually lives in four places:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Post and page content</strong>: links you added in the editor, and the addresses of images you inserted.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Custom fields (post meta)</strong>: page builder layouts, button links, theme and SEO settings per page, custom links in navigation menus.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>The options table</strong>: classic widgets, Customizer settings, plugin settings.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>GUIDs</strong>: a permanent ID of every post that happens to look like a URL. Leave it alone; WordPress uses it to recognise posts in feeds, and it is not shown to visitors.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>With <a href="/features/">Scoped Search &amp; Replace</a> you can count the matches in the first two before changing anything. Open <strong>Search &amp; Replace</strong>, choose the posts table, field <em>Post/Page Content</em>, <em>All Content Types</em> and <em>All statuses</em>, and search for the old address, for example <code>http://old-shop.example</code>. Then do the same with the post meta table.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Step 3: replace, one part at a time</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Work from small to large so you can check each step:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li><strong>One page first.</strong> In Find and Replace, pick a single page from the list, replace the old address with the new one, and open the page to check it.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Published content.</strong> Widen the scope to all published posts and pages, and replace.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Everything else in content.</strong> Choose All Content Types and All statuses to include drafts, scheduled posts, revisions and reusable blocks.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Custom fields.</strong> Choose the post meta table and replace there. Serialized values (common in builders and themes) are unpacked and packed again, so their recorded text lengths stay correct.</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Match the address exactly, including <code>http://</code> or <code>https://</code> and <code>www.</code>, and replace it with the exact new form. If your old site was reachable both with and without <code>www.</code>, search for both.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-note"} -->
+<p class="sr-note"><strong>Watch out for the domain alone.</strong> Replacing just <code>old-shop.example</code> also changes email addresses such as <code>hello@old-shop.example</code>. That may be what you want, but check the search results first.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Step 4: the parts that are not in posts</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Scoped Search &amp; Replace deliberately does not touch the options table. Check these by hand:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Appearance › Widgets</strong> and <strong>Appearance › Customize</strong> (logo link, header and footer text).</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Settings of your SEO, form and email plugins (for example the "from" address).</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Your page builder's own settings, and its CSS: in Elementor, Tools › Regenerate CSS &amp; Data.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Step 5: check and tell search engines</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Search for the old address once more in both tables: the counts should be zero.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Clear your page cache and open the home page, a post, a page and the menu.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Ask your host to redirect every address on the old domain to the same path on the new one (a 301 redirect), so old links and search results keep working.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Add the new domain in Google Search Console and use its change-of-address tool.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->

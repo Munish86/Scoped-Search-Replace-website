@@ -1,0 +1,333 @@
+<!-- wp:group {"align":"full","className":"sr-page-hero","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull sr-page-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Features</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">A careful search and replace for WordPress</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"sr-lead"} -->
+<p class="sr-lead">Everything Scoped Search &amp; Replace does, and just as clearly, what it leaves alone. One screen in your dashboard, no settings, no account.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"sr-cta sr-arrow"} -->
+<div class="wp-block-button sr-cta sr-arrow"><a class="wp-block-button__link wp-element-button" href="/download/">Download free</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sr-section sr-section--canvas sr-section--line","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull sr-section sr-section--canvas sr-section--line"><!-- wp:group {"className":"sr-section-head","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-section-head"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">The scope</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Five choices decide what can change</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"sr-lead"} -->
+<p class="sr-lead">The search and the replacement each have the same five choices. Leave a choice wide, or narrow it down to one single page.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:table {"align":"wide","className":"sr-table"} -->
+<figure class="wp-block-table alignwide sr-table"><table><thead><tr><th>Choice</th><th>Options</th><th>Good to know</th></tr></thead><tbody><tr><td>Database table</td><td>Posts table, or post meta table</td><td>Shown with your site's real table names, such as <code>wp_posts</code> and <code>wp_postmeta</code>.</td></tr><tr><td>Database field</td><td>Posts: content, title or excerpt. Post meta: the custom field value</td><td>The field list follows the table you pick.</td></tr><tr><td>Content type</td><td>All content types, or one public type: posts, pages, and types added by plugins such as products</td><td>Media attachments are not offered on their own. With "All content types" and "All statuses", every row is in scope, including revisions and menu items.</td></tr><tr><td>Post status</td><td>All statuses, Published, Draft, Pending review, Private, Scheduled</td><td>The tool starts on Published, so drafts are left alone unless you choose them.</td></tr><tr><td>Specific page or post</td><td>All matching items, or one item from the list</td><td>The list only offers items that fit the content type and status you chose.</td></tr></tbody></table></figure>
+<!-- /wp:table --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sr-section","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull sr-section"><!-- wp:columns {"align":"wide","className":"sr-split"} -->
+<div class="wp-block-columns alignwide sr-split"><!-- wp:column {"width":"40%"} -->
+<div class="wp-block-column" style="flex-basis:40%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">1. Search and count</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">A search that only reads</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Enter a URL or any text and click "Search and Count". Nothing is written. You get the number of matching rows, the total number of times the text appears, and a table of every record.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"className":"sr-check"} -->
+<ul class="wp-block-list sr-check"><!-- wp:list-item -->
+<li>Record ID, page or post ID, title, type and status</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Meta key for custom fields, so you know which setting matched</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Edit and View links that open in a new tab</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Case-sensitive and exact: "Example.com" and "example.com" are different</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","className":"sr-shot"} -->
+<figure class="wp-block-image size-full sr-shot"><img src="/wp-content/themes/scoped-sr/assets/images/plugin-search.webp" alt="The Search and Count card: scope set to wp_posts, Post/Page Content, Page, Published, all matching pages, and the text http://harbour-coffee.example entered"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:columns {"align":"wide","className":"sr-split sr-split--flip"} -->
+<div class="wp-block-columns alignwide sr-split sr-split--flip"><!-- wp:column {"width":"40%"} -->
+<div class="wp-block-column" style="flex-basis:40%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">2. Find and replace</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">A replacement that stays inside its lines</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Enter the old and the new value with the same scope you searched. The plugin looks up the matching records again, re-reads each one just before changing it, and writes only those rows.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"className":"sr-check"} -->
+<ul class="wp-block-list sr-check"><!-- wp:list-item -->
+<li>A confirmation with old value, new value, table, field and scope</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Refuses empty values and an old value equal to the new one</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Clears the WordPress cache of each changed post</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Afterwards, a fresh search shows what is left in the scope</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","className":"sr-shot"} -->
+<figure class="wp-block-image size-full sr-shot"><img src="/wp-content/themes/scoped-sr/assets/images/plugin-replace.webp" alt="The Find and Replace card: the same scope, old URL http://harbour-coffee.example, new URL https://www.harbour-coffee.example, and the red Replace Selected Records button"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:columns {"align":"wide","className":"sr-split"} -->
+<div class="wp-block-columns alignwide sr-split"><!-- wp:column {"width":"40%"} -->
+<div class="wp-block-column" style="flex-basis:40%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">3. Results</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">A clear report after every run</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The message says how many rows were updated and how many occurrences were replaced. Records that could not be changed, or were skipped because their data was damaged, are listed by ID so you can look at them.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The page you see after a search or replacement is a fresh page, so pressing reload in the browser does not send the form again.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","className":"sr-shot"} -->
+<figure class="wp-block-image size-full sr-shot"><img src="/wp-content/themes/scoped-sr/assets/images/plugin-done.webp" alt="After the replacement: Replacement completed. Updated 5 database rows and replaced 12 occurrences. The new search finds 0 remaining matches"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sr-section sr-section--canvas","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull sr-section sr-section--canvas"><!-- wp:group {"className":"sr-section-head","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-section-head"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Serialized data</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Lengths that stay correct</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"sr-lead"} -->
+<p class="sr-lead">Serialized values store the length of each piece of text. Change the text without the length and PHP can no longer read the value. The plugin unpacks the value, replaces the text at every level, and packs it again.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:columns {"align":"wide","className":"sr-compare"} -->
+<div class="wp-block-columns alignwide sr-compare"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:paragraph {"className":"sr-label-bad"} -->
+<p class="sr-label-bad">Plain SQL replace</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-formula"} -->
+<p class="sr-formula">a:1:{s:3:"url";s:<strong>22</strong>:"https://www.example.com";}<br><br>The text is now 23 characters long, but the value still says 22. PHP cannot read it, and the setting is lost.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:paragraph {"className":"sr-label-good"} -->
+<p class="sr-label-good">Scoped Search &amp; Replace</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-formula"} -->
+<p class="sr-formula">a:1:{s:3:"url";s:<strong>23</strong>:"https://www.example.com";}<br><br>Unserialized, replaced, serialized again: the length matches the text, and the setting keeps working.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:paragraph {"align":"center","className":"sr-small sr-muted"} -->
+<p class="has-text-align-center sr-small sr-muted">Before: <code>a:1:{s:3:"url";s:22:"http://old.example.com";}</code>. Values that are already damaged are skipped and reported, never overwritten. <a href="/search-replace-serialized-data-wordpress/">Read the full explanation</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sr-section","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull sr-section"><!-- wp:columns {"align":"wide","className":"sr-cards"} -->
+<div class="wp-block-columns alignwide sr-cards"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"className":"sr-card","layout":{"type":"default"}} -->
+<div class="wp-block-group sr-card"><!-- wp:heading {"level":3,"className":"sr-ic sr-ic--shield"} -->
+<h3 class="wp-block-heading sr-ic sr-ic--shield">Security</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"className":"sr-check"} -->
+<ul class="wp-block-list sr-check"><!-- wp:list-item -->
+<li>Only users with the <code>manage_options</code> capability (administrators)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>A nonce on every request</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Tables, fields, types and statuses checked against a fixed list</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>All values passed to the database through prepared queries</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"className":"sr-card","layout":{"type":"default"}} -->
+<div class="wp-block-group sr-card"><!-- wp:heading {"level":3,"className":"sr-ic sr-ic--zap"} -->
+<h3 class="wp-block-heading sr-ic sr-ic--zap">Light</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"className":"sr-check"} -->
+<ul class="wp-block-list sr-check"><!-- wp:list-item -->
+<li>Loads its files only on its own admin screen</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Stores no settings; the last result is kept for 5 minutes, per user</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>No external requests, no tracking, no ads</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Deleting the plugin removes its temporary data</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"className":"sr-card","layout":{"type":"default"}} -->
+<div class="wp-block-group sr-card"><!-- wp:heading {"level":3,"className":"sr-ic sr-ic--globe"} -->
+<h3 class="wp-block-heading sr-ic sr-ic--globe">Fits in</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"className":"sr-check"} -->
+<ul class="wp-block-list sr-check"><!-- wp:list-item -->
+<li>WordPress 5.8 or later, PHP 7.4 or later</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Multisite: works on the site you are viewing</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Every text can be translated</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>"Open tool" link right on the Plugins screen</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sr-section sr-section--canvas","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull sr-section sr-section--canvas"><!-- wp:columns {"align":"wide","className":"sr-split"} -->
+<div class="wp-block-columns alignwide sr-split"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">What it never touches</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Limited on purpose</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Keeping the tool to posts and their custom fields is what makes every replacement predictable. These parts of your database are never searched or changed:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"className":"sr-check sr-cross"} -->
+<ul class="wp-block-list sr-check sr-cross"><!-- wp:list-item -->
+<li>The options table: site address, widgets, theme and plugin settings</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Users and user meta</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Comments</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Categories, tags and other terms</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Custom tables created by other plugins</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Your part</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Always take a backup first</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Replacements are written straight to the database and there is no undo button. The plugin reminds you on its screen and in the confirmation. Your host's backup, or any backup plugin, is enough.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-note"} -->
+<p class="sr-note">Made a mistake? Replace the new value back with the old one, in the same scope. Or restore your backup.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"sr-cta-wrap","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull sr-cta-wrap"><!-- wp:pattern {"slug":"scoped-sr/cta-band"} /--></div>
+<!-- /wp:group -->

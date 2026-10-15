@@ -1,0 +1,105 @@
+<!-- wp:paragraph -->
+<p>You ran a quick SQL query to swap an old URL for a new one. The posts look fine, but a page builder layout is suddenly empty, a slider has lost its slides, or a plugin is back on its default settings. Nothing was deleted: the data is still there, PHP just can no longer read it. The reason is serialized data.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">What serialized data is</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>WordPress, themes and plugins often need to save a group of settings, a list or a whole layout in one database field. PHP turns such a structure into text with <code>serialize()</code> and back with <code>unserialize()</code>. The text looks like this:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:code -->
+<pre class="wp-block-code"><code>a:2:{s:4:"logo";s:31:"http://old.example.com/logo.png";s:4:"link";s:22:"http://old.example.com";}</code></pre>
+<!-- /wp:code -->
+
+<!-- wp:paragraph -->
+<p>Read it as: an array (<code>a</code>) with 2 items; a string (<code>s</code>) of 4 characters, <code>logo</code>; a string of 31 characters, the logo address; and so on. Every piece of text carries its exact length.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Why a plain replace breaks it</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Replace <code>http://old.example.com</code> (22 characters) with <code>https://www.example.com</code> (23 characters) using SQL's <code>REPLACE()</code>, or a text editor on a database export, and you get:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:code -->
+<pre class="wp-block-code"><code>a:2:{s:4:"logo";s:31:"https://www.example.com/logo.png";s:4:"link";s:22:"https://www.example.com";}</code></pre>
+<!-- /wp:code -->
+
+<!-- wp:paragraph -->
+<p>The texts are now 32 and 23 characters long, but the value still says 31 and 22. <code>unserialize()</code> fails, WordPress gets <code>false</code> instead of the settings, and the theme or plugin falls back to its defaults. If the setting is saved again in that state, the old values are gone for good.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Only replacements that keep the length the same are safe by accident, which is rarely the case for URLs: <code>http</code> to <code>https</code> alone adds one character.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Where you find it</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Post meta</strong>: page builder and theme settings per page, sliders, custom field plugins storing groups or repeaters.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Options</strong>: widgets, theme settings, most plugin settings.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Rarely in post content, which is mostly plain HTML and block markup.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Some builders use JSON instead of serialization. JSON has no lengths, so a replace doesn't break it the same way, but it often writes slashes as <code>\/</code>, so a search for a full URL may find nothing. Search for the domain alone in that case.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How to replace inside it safely</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The safe way is the reverse of how the data was made: unserialize the value, replace the text in every string inside it, at every level, and serialize it again. PHP then writes the new, correct lengths.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>That is what <a href="/features/">Scoped Search &amp; Replace</a> does for every value it changes. It also handles two edge cases that are easy to miss:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Values that are already broken</strong> (for example by an earlier plain replace) can't be unserialized. They are skipped, left exactly as they were and listed by ID, instead of being damaged further.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>A serialized plain string</strong> (a single text, serialized) is serialized again after the change, so the plugin that stored it still reads it the way it expects.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">If the damage is already done</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li>Restore the backup you took before the replace. This is by far the simplest fix.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>No backup? The values can sometimes be repaired by recalculating each <code>s:<em>n</em></code> by hand or with a developer's script. It is fiddly: count bytes, not characters, for non-English text.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Otherwise, open the affected pages or settings and set them up again.</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Next time: back up, search and count first, and use a tool that understands serialization.</p>
+<!-- /wp:paragraph -->
